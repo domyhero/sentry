@@ -8,8 +8,9 @@ from sentry.interfaces.stacktrace import Frame
 from sentry.similarity.encoder import Encoder
 from sentry.similarity.index import MinHashIndex
 from sentry.similarity.features import (
-    FeatureSet,
     ExceptionFeature,
+    FeatureSet,
+    InterfaceDoesNotExist,
     MessageFeature,
     get_application_chunks,
 )
@@ -104,6 +105,9 @@ features = FeatureSet(
             ),
         ),
     },
+    expected_extraction_errors=(
+        InterfaceDoesNotExist,
+    ),
     expected_encoding_errors=(
         FrameEncodingError,
     ),
