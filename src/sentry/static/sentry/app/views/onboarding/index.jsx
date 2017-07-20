@@ -5,10 +5,7 @@ import {browserHistory} from 'react-router';
 // import OrganizationContext from './views/organizationContext';
 
 import ApiMixin from '../../mixins/apiMixin';
-// import OrganizationActions from '../../actions/organizationActions';
-
 import ProgressNodes from './progress';
-// import {onboardingSteps} from './utils';
 import ProjectActions from '../../actions/projectActions';
 
 const OnboardingWizard = React.createClass({
