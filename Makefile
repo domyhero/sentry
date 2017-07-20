@@ -106,7 +106,14 @@ test-cli:
 	rm -r test_cli
 	@echo ""
 
+mock-integration-docs:
+	@echo "--> faking platform json assets"
+	mkdir -p ./src/sentry/integration-docs/
+	touch ./src/sentry/integration-docs/_platforms.json
+	echo "{\"platforms\": []}" >./src/sentry/integration-docs/_platforms.json
+
 test-js:
+	mock-integration-docs
 	@echo "--> Building static assets"
 	@${NPM_ROOT}/.bin/webpack
 	@echo "--> Running JavaScript tests"
@@ -119,6 +126,7 @@ test-python:
 	@echo ""
 
 test-acceptance:
+	mock-integration-docs:
 	@echo "--> Building static assets"
 	@${NPM_ROOT}/.bin/webpack
 	@echo "--> Running acceptance tests"
