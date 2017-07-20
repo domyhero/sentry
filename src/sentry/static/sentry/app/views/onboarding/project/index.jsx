@@ -29,6 +29,7 @@ const Project = React.createClass({
               name="name"
               label="Project Name"
               placeholder="Project name"
+              value={this.props.name}
               onChange={e => this.props.setName(e.target.value)}
             />
           </div>
