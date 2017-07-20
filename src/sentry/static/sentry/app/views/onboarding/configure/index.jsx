@@ -76,10 +76,9 @@ const Configure = React.createClass({
 
     return (
       <div>
-        <Waiting />
         <div className="onboarding-Configure">
-
-          <ProjectContext projectId={projectId} orgId={orgId}>
+          <h2 style={{marginBottom: 30}}>Configure your application</h2>
+          <ProjectContext projectId={projectId} orgId={orgId} style={{marginBottom: 30}}>
             <ProjectDocsContext>
               <ProjectInstallPlatform
                 platformData={{
@@ -91,9 +90,7 @@ const Configure = React.createClass({
               />
             </ProjectDocsContext>
           </ProjectContext>
-          <div className="btn btn-primary" onClick={this.submit}>
-            skip configure
-          </div>
+          <Waiting skip={this.submit} />
         </div>
       </div>
     );
